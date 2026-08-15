@@ -10,11 +10,12 @@ function FarooqLogo({
   animate,
   whileHover,
   transition,
+  width,
   ...props
 }) {
   return (
  <svg
-   width="100%"
+   width={width}
    viewBox="0 0 63.234055 16.775999"
    version="1.1"
    id="svg1"

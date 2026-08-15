@@ -1,21 +1,29 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from "react";
 
 function useWindow() {
-    const [dimension,setDimension]=useState({width:0,height:0})
+  const [dimension, setDimension] = useState({
+    width: 0,
+    height: 0,
+  });
 
+  useEffect(() => {
+    const resize = () => {
+      setDimension({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      });
+    };
 
-    const resize=()=>{
-        setDimension({
-            width:window.innerWidth,
-            height:window.innerHeight,
-        })
-    }
-    useEffect(()=>{
-resize()
-window.addEventListener('resize',resize);
-return ()=>window.removeEventListener('resize',resize)
-    },[])
-  return {dimension}
+    resize();
+
+    window.addEventListener("resize", resize);
+
+    return () => {
+      window.removeEventListener("resize", resize);
+    };
+  }, []);
+
+  return { dimension };
 }
 
-export default useWindow
+export default useWindow;

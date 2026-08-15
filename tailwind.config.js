@@ -37,7 +37,7 @@ module.exports = {
         'heading1': 'clamp(3em, 7vw + 0.5em, 8.5em)',
         'heading2': 'clamp(2.4em, 4.5vw + 0.5em, 4.5em)',
         'heading3': 'clamp(1em, 2vw + 0.2em, 2.8em)',
-        'display': 'clamp(3em, 5vw + 1vw, 6em)',
+        'display': 'clamp(4em, 10vw + .2em, 12em)',
         'footer': 'clamp(40px, 9vw, 80px)',
       },
       margin:{
@@ -49,15 +49,6 @@ module.exports = {
         'preloader': '9999',
         'header': '999',
         
-      },
-      lineHeight:{
-         'regular': 'clamp(24px, 3vw, 32px)',
-         'display': 'clamp(70px, 30vw, 400px)',
-        'button': 'clamp(14px, 3.5vw, 18px)',
-        'heading': 'clamp(60px, 10vw, 90px)',
-        'footer': 'clamp(38px, 9vw, 80px)',
-        'heading2': 'clamp(48px, 8vw, 84px)',
-        'para': 'clamp(20px, 1vw, 24px)',
       },
       colors:{
         'brand-white':"#F6EFE4",

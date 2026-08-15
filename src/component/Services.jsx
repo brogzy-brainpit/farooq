@@ -9,8 +9,8 @@ function Services() {
 
         <Section>
             <GridColumn>
-                <div className="col-span-10">
-                    <h2 className='font-custom capitalize text-brand-white text-heading1'>from our services</h2>
+                <div className="col-span-full mb-8 ">
+                    <h2 className='font-custom leading-none capitalize text-brand-white text-display'>from our detailing services</h2>
                     </div>
                 <div className="lg:col-span-6 col-span-full">
                     <p className='font-body text-brand-white text-heading3'>
@@ -18,7 +18,7 @@ function Services() {
                         the highest quality and meets the standards adjusted to your needs. Choose the one you like.
                     </p>
                 </div>
-                <div className="lg:col-span-5 lg:col-start-8 col-start-2 col-span-5">
+                <div className="lg:col-span-6  col-start-2 col-span-5">
                 <TravelGalleryDemo/>
                 </div>
             </GridColumn>
