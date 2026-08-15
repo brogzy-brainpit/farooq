@@ -290,25 +290,25 @@ function ListItem({
       target={<Polaroid src={src} caption={caption} />}
       rotation={rotation}
       offset={offset}
-      className="group flex cursor-pointer items-center justify-between rounded-lg px-2 py-4 transition-all duration-300 hover:bg-zinc-100 dark:hover:bg-zinc-900 hover:pl-4"
+      className="group flex cursor-pointer items-center justify-between rounded-lg px-2 py-4 transition-all duration-300 hover:bg-brand-background dark:hover:bg-zinc-900 hover:pl-4"
     >
       <div className="flex items-center gap-6">
-        <span className="font-mono text-xs text-zinc-400 transition-colors group-hover:text-zinc-600 dark:group-hover:text-zinc-300">
-          {index}
+        <span className="font-custom text-heading3 text-white/60 transition-colors group-hover:text-zinc-600 dark:group-hover:text-brand-background">
+          0{index}
         </span>
 
         <div className="flex flex-col">
-          <span className="text-sm font-medium tracking-wide">
+          <span className="text-para text-brand-white uppercase font-custom font-medium tracking-wide">
             {title}
           </span>
 
-          <span className="text-xs font-light text-zinc-500">
+          <span className="text-xs font-body font-light text-white/60">
             {subtitle}
           </span>
         </div>
       </div>
 
-      <MapPin className="h-4 w-4 text-zinc-400 opacity-0 transition-all duration-300 group-hover:opacity-100 group-hover:text-black dark:group-hover:text-white" />
+      <MapPin className="h-4 w-4 text-white/60 opacity-0 transition-all duration-300 group-hover:opacity-100 group-hover:text-black dark:group-hover:text-white" />
     </GlidingCardItem>
   );
 }
@@ -321,7 +321,7 @@ export default function TravelGalleryDemo() {
         @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@600&display=swap');
       `}</style>
 
-      <div className="w-full overflow-hidden bg-background p-6 sm:p-8">
+      <div className="w-full overflow-hidde bg-background p-6 sm:p-8">
         {/* Header */}
         <div className="mb-12 flex flex-col gap-2">
           <p className="max-w-md text-para font-body text-brand-white/70">

@@ -5,6 +5,7 @@ import Section1 from "@/component/Section1";
 import Mask from "@/component/Mask";
 import Landing from "@/component/Landing";
 import Services from "@/component/Services";
+import Portfolio from "@/component/Portfolio";
 
 
 export default function Home() {
@@ -27,6 +28,7 @@ export default function Home() {
     <Landing preloaderOut={preLoaderOut}/>
 <Section1/>
 <Services/>
+<Portfolio/>
 <Mask/>
     </main>
   );
