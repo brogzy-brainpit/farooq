@@ -14,7 +14,7 @@ function Header({ scrollYProgress }) {
   const isMobile = dimension.width < 768;
 
   const targetWidth =
-    dimension.width * (isMobile ? 0.75 : 0.6);
+    dimension.width * (isMobile ? 0.85 : 0.6);
 
   const initialScale =
     dimension.width > 0

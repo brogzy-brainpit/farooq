@@ -72,10 +72,13 @@ function Landing({ preloaderOut }) {
         >
           <GridColumn className="h-full w-full">
 
-            <div className="col-span-4 lg:col-start-10 lg:col-span-3 mix-blend-difference">
+            <div className="col-span-4 lg:col-start-10  self-end lg:col-span-3 mix-blend-difference">
               <h1 className="font-custom text-para leading-[1] text-brand-white">
                 <SlideUpText
                   preLoaderOut={preloaderOut}
+                  initialDelay={.4}
+                  once
+                  gap=".32em"
                   text="Your Car Deserves Better. Experience Luxury Car Detailing in Miami Today."
                 />
               </h1>
