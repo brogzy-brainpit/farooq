@@ -111,7 +111,7 @@ function Landing({preloaderOut}) {
       </h1>
     </div>
 
-    <div className="col-span-3 lg:col-span-3 self-end col-start-1 mix-blend-difference">
+    <div className="col-span-3 mb-4 lg:mb-0 lg:col-span-3 self-end col-start-1 mix-blend-difference">
       <p className="font-body text-para lg:text-heading3 leading-[1] text-brand-white">
         We make premium detailing the new standard.
       </p>
