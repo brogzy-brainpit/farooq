@@ -20,7 +20,7 @@ function Landing({ preloaderOut }) {
   const scale = useTransform(
     scrollYProgress,
     [0, 0.8],
-    [1 / 3, 1]
+    [2 / 5, 1]
   );
 
   const padding = "14px";
@@ -68,26 +68,35 @@ function Landing({ preloaderOut }) {
         {/* CONTENT */}
         <Section
           padding={false}
-          className="relative z-header h-full px-5 pt-20 pb-5 lg:pt-10 lg:pb-10"
+          className="relative mix-blend-difference z-header h-full px-5 pt-20 pb-5 lg:pt-10 lg:pb-10"
         >
           <GridColumn className="h-full w-full">
 
-            <div className="col-span-4 lg:col-start-10  self-end lg:col-span-3 mix-blend-difference">
+            <div className="col-span-4 lg:col-start-10  self-end lg:col-span-3">
               <h1 className="font-custom text-para leading-[1] text-brand-white">
                 <SlideUpText
                   preLoaderOut={preloaderOut}
                   initialDelay={.4}
                   once
                   gap=".32em"
+                  delay={0.008}
                   text="Your Car Deserves Better. Experience Luxury Car Detailing in Miami Today."
                 />
               </h1>
             </div>
 
-            <div className="col-span-3 col-start-1 self-end mb-12 lg:mb-0 lg:col-span-3 mix-blend-difference">
-              <p className="font-body text-para lg:text-heading3 leading-[1] text-brand-white">
-                We make premium detailing the new standard.
-              </p>
+            <div className="col-span-3 col-start-1 self-end mb-12 lg:mb-0 lg:col-span-3">
+              <h2 className="font-body text-para lg:text-heading3 leading-[1] text-brand-white">
+                
+                  <SlideUpText
+                  preLoaderOut={preloaderOut}
+                  initialDelay={.6}
+                  once
+                  gap=".32em"
+                  delay={0.008}
+                  text="We make premium detailing the new standard."
+                />
+              </h2>
             </div>
 
           </GridColumn>

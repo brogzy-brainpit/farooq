@@ -325,7 +325,7 @@ export default function TravelGalleryDemo() {
         {/* Header */}
         <div className="mb-12 flex flex-col gap-2">
           <p className="max-w-md text-para font-body text-brand-white/70">
-           we've got you covered in these type of services.
+           we&apos;ve got you covered in these type of services.
           </p>
         </div>
 

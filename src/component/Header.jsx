@@ -9,7 +9,7 @@ import useWindow from "@/hooks/useWindow";
 function Header({ scrollYProgress }) {
   const { dimension } = useWindow();
 
-  const logoWidth = 100;
+  const logoWidth = 150;
 
   const isMobile = dimension.width < 768;
 
@@ -28,7 +28,7 @@ function Header({ scrollYProgress }) {
   );
 
   return (
-    <header className="fixed top-0 inset-x-0 z-header">
+    <header className="fixed top-0 inset-x-0 z-header mix-blend-difference">
       <Section
         padding={false}
         className="relative px-5 pt-20 pb-5 lg:pt-10 lg:pb-10"
@@ -41,7 +41,6 @@ function Header({ scrollYProgress }) {
           className="
             w-fit
             origin-top-left
-            mix-blend-difference
             text-brand-white
           "
         >

@@ -8,7 +8,7 @@ useEffect(() => {
 
   if (!video) return
 
-  video.playbackRate = 1.32
+  video.playbackRate = 1
 
   if (preLoaderOut) {
     video.play().catch(() => {})
@@ -40,7 +40,7 @@ useEffect(() => {
       >
         Your browser does not support this video tag.
       </video>
-      <div className=' absolute z-10 top-0 left-0 bg-neutral-800/50 h-[120%] w-[120%] inset-0'/>
+      <div className=' absolute z-10 top-0 left-0 bg-neutral-800/30 h-[120%] w-[120%] inset-0'/>
 
     </>
   )
