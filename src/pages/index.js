@@ -4,6 +4,7 @@ import LocalTime from "@/component/LocalTime";
 import Section1 from "@/component/Section1";
 import Mask from "@/component/Mask";
 import Landing from "@/component/Landing";
+import Services from "@/component/Services";
 
 
 export default function Home() {
@@ -25,6 +26,7 @@ export default function Home() {
       {/* <LocalTime/> */}
     <Landing preloaderOut={preLoaderOut}/>
 <Section1/>
+<Services/>
 <Mask/>
     </main>
   );
