@@ -7,21 +7,15 @@ import FarooqLogo from "./FarooqLogo";
 import useWindow from "@/hooks/useWindow";
 
 function Header({ scrollYProgress }) {
-
   const { dimension } = useWindow();
 
   const logoWidth = 100;
 
-  /*
-   * How much of the viewport width
-   * should the large logo occupy?
-   */
-  const targetWidth = dimension.width * 0.45;
+  const isMobile = dimension.width < 768;
 
-  /*
-   * Calculate how much we need to
-   * scale the 200px logo.
-   */
+  const targetWidth =
+    dimension.width * (isMobile ? 0.75 : 0.6);
+
   const initialScale =
     dimension.width > 0
       ? targetWidth / logoWidth
@@ -35,12 +29,10 @@ function Header({ scrollYProgress }) {
 
   return (
     <header className="fixed top-0 inset-x-0 z-header">
-
       <Section
         padding={false}
         className="relative px-5 pt-20 pb-5 lg:pt-10 lg:pb-10"
       >
-
         <motion.div
           style={{
             scale,
@@ -49,14 +41,13 @@ function Header({ scrollYProgress }) {
           className="
             w-fit
             origin-top-left
-            mix-blend-difference text-brand-white
+            mix-blend-difference
+            text-brand-white
           "
         >
           <FarooqLogo width={logoWidth} />
         </motion.div>
-
       </Section>
-
     </header>
   );
 }
