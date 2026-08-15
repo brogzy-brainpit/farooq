@@ -50,7 +50,7 @@ function Landing({preloaderOut}) {
   return (
     <div
       ref={containerRef}
-      className="relative h-[400svh] w-full bg-[linear-gradient(115deg,#000000,#333333)]"
+      className="relative h-[400svh] w-full bg-brand-black"
     >
       <div
         className="
