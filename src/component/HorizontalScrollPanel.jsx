@@ -7,6 +7,7 @@ import SlideUpText from '@/effects/SlideUpText';
 import { useMediaQuery } from 'react-responsive';
 import ImageEffect from '@/effects/ImageEffect';
 import Image from 'next/image';
+import ParallaxImage from './ParallaxImage';
 
 function HorizontalScrollPanel() {
   const ref=useRef(null)
@@ -24,40 +25,25 @@ const service= [
   {title:"title 002",src:"/assets/red-benz.png",id:1},
   {title:"title 003",src:"/assets/red1.webp",id:1},
 ]
+const tracks = useRef([]);
+const setTrackRef = (index) => (element) => {
+  tracks.current[index] = element;
+};
   return (
    <section ref={ref} className='relative h-[400svh] w-full bg-red400'>
     <div className="lg:sticky lg:top-0 lg:h-svh  overflow-hidden">
       <motion.div style={{x:isTabletOrMobile?0:x}} className='lg:w-[270vw] w-full flex-col lg:flex-row gap-4 p-4 flex h-full'>
 
-{service.map(({title,src,id},index)=>{
-  return (
-    <div key={index} className='relative lg:w-[90vw] h-[60svh] lg:h-auto  w-full items-center justify-center text7xl text-black'>
-          <div className='absolute top-0 inset-0 w-full h-full flex overflow-hidden lg:rounded-3xl rounded-xl  justify-between flex-col'>
-            <Image src={src} fill className='w-full object-cover'/>
-          </div>
-
-          <div className='absolute inset-0 bg-neutral-900/30'/>
-
-          <div className="relative p-6 w-full h-full  flex justify-between flex-col">
-            <div className="up">
-            <h2 className='text-heading1 font-custom capitalize text-brand-white'>{title}</h2>
-            </div>
-            <div className="down flex">
-              <h4 className="font-body text-brand-white border border-brand-white p-2 rounded-lg">
-              {id}/{service.length}
-              </h4>
-            </div>
-          </div>
-        </div>
-
-  )
-})}
-        
-        
-
-       
-       
-
+{service.map((item, index) => (
+  <ServiceCard
+    key={item.id}
+    track={ref}
+    title={item.title}
+    src={item.src}
+    id={index + 1}
+    total={service.length}
+  />
+))}
       </motion.div>
     </div>
 
@@ -65,17 +51,45 @@ const service= [
   )
 }
 
+function ServiceCard({ title,track, src, id, total }) {
+  // const track = useRef(null);
 
-const Content=({className='',color='#000',text,src='/images/003.png'})=>{
   return (
-    <div   >
-            <h2>
-              {/* <SlideUpText text={text} preLoaderOut={true}/> */}
-              {text}
-            </h2>
-            {/* <img className={` ${className} max-w-[30em] my-2 object-cover  h-[40svh]`} src={src}/> */}
-             <ImageEffect height='40vh' color={color} className='max-w-[30em] my-2 object-cover  h-[20svh]' img={src} />
-              </div>
-  )
+    <div className="relative lg:w-[90vw] h-[60svh] lg:h-auto w-full">
+      <div
+        ref={track}
+        className="
+          absolute inset-0
+          w-full h-full
+          overflow-hidden
+          lg:rounded-3xl rounded-xl
+        "
+      >
+        <ParallaxImage
+          offset={["start start", "end end"]}
+          track={track}
+          parallaxOnX
+          parallaxOnY={false}
+          fill
+          className="w-full object-cover"
+          src={src}
+        />
+      </div>
+
+      <div className="absolute inset-0 bg-neutral-900/30" />
+
+      <div className="relative p-6 w-full h-full flex justify-between flex-col">
+        <h2 className="text-heading1 font-custom capitalize text-brand-white">
+          {title}
+        </h2>
+
+        <div>
+          <h4 className="font-body text-brand-white border border-brand-white p-2 rounded-lg">
+            {id}/{total}
+          </h4>
+        </div>
+      </div>
+    </div>
+  );
 }
 export default HorizontalScrollPanel
