@@ -62,7 +62,7 @@ function ServiceCard({ title,track, src, id, total }) {
           parallaxOnY={false} fill className="w-full object-cover"
         />
       </div>
-      <div className="absolute inset-0 f bg-neutral-900/30" />
+      <div className="absolute inset-0 bg-neutral-900/30" />
 
       <div className="relative px-5 py-4 w-full h-full flex justify-between flex-col">
         <h2 className="text-heading1 font-custom capitalize text-brand-white">
