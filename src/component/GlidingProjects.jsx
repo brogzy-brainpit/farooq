@@ -365,7 +365,7 @@ export default function TravelGalleryDemo() {
             </div>
 
             {/* RIGHT */}
-              <div className="relative min-h-[500px] w-full [perspective:1000px]">
+              <div className="relative w-full [perspective:1000px]">
               <GlidingCardContent />
             </div>
           </div>

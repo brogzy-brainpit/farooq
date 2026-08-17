@@ -1,14 +1,17 @@
 "use client";
 
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import LandingVideo from "./LandingVideo";
 import GridColumn from "@/layout/GridColumn";
 import Section from "@/layout/Section";
 import SlideUpText from "@/effects/SlideUpText";
 import Header from "./Header";
+import useMouse from "@/hooks/useMouse";
+import MouseMovingDiv from "./MouseMovingDiv";
 
 function Landing({ preloaderOut }) {
+ const [scaleMouse, setScaleMouse] = useState(false)
 
   const containerRef = useRef(null);
 
@@ -35,10 +38,17 @@ function Landing({ preloaderOut }) {
     <div
       ref={containerRef}
       className="relative h-[400svh] w-full bg-brand-black"
+      onMouseEnter={() => setScaleMouse(true)}
+          onMouseLeave={() => setScaleMouse(false)}
     >
 
+      {/* mouse movement on mouse movement */}
+      {/* mouse movement on mouse movement */}
+<MouseMovingDiv scaleMouse={scaleMouse} setScaleMouse={setScaleMouse}/>
+      {/* mouse movement on mouse movement */}
+
       {/* HEADER USES THE SAME SCROLL PROGRESS */}
-      <Header scrollYProgress={scrollYProgress} />
+      <Header preLoaderOut={preloaderOut} scrollYProgress={scrollYProgress} />
 
       <div className="sticky top-0 left-0 h-svh w-full overflow-hidden">
 
