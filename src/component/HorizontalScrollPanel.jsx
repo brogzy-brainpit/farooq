@@ -52,33 +52,19 @@ const setTrackRef = (index) => (element) => {
 }
 
 function ServiceCard({ title,track, src, id, total }) {
-  // const track = useRef(null);
-
   return (
     <div className="relative lg:w-[90vw] h-[60svh] lg:h-auto w-full">
       <div
         ref={track}
-        className="
-          absolute inset-0
-          w-full h-full
-          overflow-hidden
-          lg:rounded-3xl rounded-xl
-        "
-      >
-        <ParallaxImage
-          offset={["start start", "end end"]}
-          track={track}
-          parallaxOnX
-          parallaxOnY={false}
-          fill
-          className="w-full object-cover"
-          src={src}
+        className="absolute inset-0 w-full h-full overflow-hidden lg:rounded-3xl rounded-xl">
+        <ParallaxImage src={src} offset={["start start", "end end"]}
+          track={track} parallaxOnX 
+          parallaxOnY={false} fill className="w-full object-cover"
         />
       </div>
-
       <div className="absolute inset-0 bg-neutral-900/30" />
 
-      <div className="relative p-6 w-full h-full flex justify-between flex-col">
+      <div className="relative px-5 py-4 w-full h-full flex justify-between flex-col">
         <h2 className="text-heading1 font-custom capitalize text-brand-white">
           {title}
         </h2>
