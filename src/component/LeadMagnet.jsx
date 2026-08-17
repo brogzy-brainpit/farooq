@@ -281,11 +281,11 @@ const LeadMagnet = () => {
                     </div>
 
                     <h3 className="font-custom text-[38px] leading-none tracking-[-0.04em]">
-                      You're on the list.
+                      You&apos;re on the list.
                     </h3>
 
                     <p className="mt-4 max-w-[350px] text-sm leading-relaxed text-black/50">
-                      I'll take a look at your website and get back to you with
+                      I&apos;ll take a look at your website and get back to you with
                       some actionable improvements.
                     </p>
 
