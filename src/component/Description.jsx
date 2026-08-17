@@ -1,42 +1,75 @@
-import React from 'react';
-import { useScroll, useTransform, motion } from 'framer-motion';
-import { useRef } from 'react';
+
+import React, { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 export default function Description() {
-    const textRef2=useRef(null)
-     const container = useRef();
-    const { scrollYProgress } = useScroll({
-      target: container,
-      offset: ['start start', 'end start']
-    })
-  // const secondPara= "How i can Help?".split(" ")
-    const secondPara2= "At Farooq, your car deserves more than a quick clean. From interior detailing to paint correction, we deliver meticulous, professional care that restores its fresh, refined finish.".split(" ")
-    const opacity = useTransform(scrollYProgress, [0, 1], ["0", "1"])
-   const {scrollYProgress:ss}= useScroll({
-      target:textRef2,
-      offset:["0.2 end",'end 0.4']
-    })
-    return (
-        <div ref={container} className=' '>
-            <h1 ref={textRef2} once={true}  className=" text-heading2 text-brand-white font-custom leading-[.9] gap-3 flex flex-wrap" gap='10px'>
-{secondPara2.map((word,i)=>{
-    var start= i/secondPara2.length;
-    var end= start+ (1/secondPara2.length);
-    return <Word key={i} range={[start,end]} word={word} progress={ss}/>
-  })}
-</h1>
-            {/* <motion.p style={{opacity,}} className='text-[7.5vw] font-custom uppercase text-center max-w-[50vw] leading-none'>The quick brown fox jumps over the lazy dog</motion.p> */}
-        </div>
-    )
+  const containerRef = useRef(null);
+
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start 80%", "end 40%"],
+  });
+
+  const lines = [
+    "At Farooq, your car deserves more than a quick clean.",
+    "From interior detailing to paint correction,",
+    "we deliver meticulous, professional care",
+    "that restores its fresh, refined finish.",
+  ];
+
+  return (
+    <section
+      ref={containerRef}
+      className="w-full px-5 py-32"
+    >
+      <div className="max-w-[900px]">
+        {lines.map((line, index) => {
+          const start = index / lines.length;
+          const end = (index + 1) / lines.length;
+
+          return (
+            <RevealLine
+              key={index}
+              line={line}
+              progress={scrollYProgress}
+              range={[start, end]}
+            />
+          );
+        })}
+      </div>
+    </section>
+  );
 }
 
-const Word=({word,progress,range})=>{
-    const textOpacity= useTransform(progress,range,[0,1])
-    return(
-  <span className='relative text-customColor text-center flex justify-center'>
-    <span style={{opacity:0.09}}   className='mr-[.1em] absolute text-center flex justify-center' >{word}</span>
-    <motion.span style={{opacity:textOpacity}}   className='mr-[.1em]' >{word}</motion.span>
-  
-  </span>
-    )
-  }
+function RevealLine({ line, progress, range }) {
+  const y = useTransform(
+    progress,
+    range,
+    ["110%", "0%"]
+  );
+
+  const opacity = useTransform(
+    progress,
+    range,
+    [0, 1]
+  );
+
+  return (
+    <div className="overflow-hidden">
+      <motion.div
+        style={{
+          y,
+          opacity,
+        }}
+        className="
+          text-heading2
+          font-custom
+          leading-[0.9]
+          text-brand-white
+        "
+      >
+        {line}
+      </motion.div>
+    </div>
+  );
+}
