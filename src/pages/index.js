@@ -6,6 +6,7 @@ import Mask from "@/component/Mask";
 import Landing from "@/component/Landing";
 import Services from "@/component/Services";
 import Portfolio from "@/component/Portfolio";
+import LeadMagnet from "@/component/LeadMagnet";
 
 
 export default function Home() {
@@ -25,6 +26,7 @@ export default function Home() {
       className={`h-full w-full bg-brand-black`}
     >
       {/* <LocalTime/> */}
+      <LeadMagnet/>
     <Landing preloaderOut={preLoaderOut}/>
 <Section1/>
 <Services/>
