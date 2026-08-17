@@ -19,7 +19,7 @@ function Section1() {
             <div ref={track} className=" lg:order-1 col-span-5 col-start-2 lg:col-start-1 lg:col-span-5 aspect-[7/5]">
               <ParallaxImage track={track} src={"/assets/yellow-car.png"}/>
             </div>
-             <div className="order-3 lg:order-2 col-start-2 col-span-4 lg:col-start-7 lg:col-span-6 ">
+             <div className="order-3 lg:order-2 my-6 lg:my-4 col-start-2 col-span-4 lg:col-start-7 lg:col-span-6 ">
                 <TypographyReveal className='font-custom text-brand-white text-heading3 capitalie leading-[1.1]'
     toColor='#f6efe4'
       animationType='fadeInUp'

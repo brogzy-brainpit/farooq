@@ -7,6 +7,7 @@ import Services from "@/component/Services";
 import Portfolio from "@/component/Portfolio";
 import LeadMagnet from "@/component/LeadMagnet";
 import ExpandingGridsImageGalleryDemo from "@/component/ExpandingGrids";
+import HorizontalScrollPanel from "@/component/HorizontalScrollPanel";
 
 
 export default function Home({preLoaderOut}) {
@@ -20,6 +21,7 @@ export default function Home({preLoaderOut}) {
 <Section1 />
 <ExpandingGridsImageGalleryDemo/>
 <Services />
+<HorizontalScrollPanel/>
 <Portfolio />
     </main>
   );
