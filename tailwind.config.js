@@ -34,9 +34,10 @@ module.exports = {
         '3xl': 'clamp(2rem, 2.4vw + 0.6rem, 2.5rem)',
         'button': 'clamp(14px, 3.5vw, 18px)',
         'para': 'clamp(1.2em, 1vw + 0.2em, 1.3em)',
+        'minor': 'clamp(1.1em, .8vw + 0.2em, 1.2em)',
         'heading1': 'clamp(3em, 7vw + 0.5em, 8.5em)',
         'heading2': 'clamp(2.4em, 4.5vw + 0.5em, 4.5em)',
-        'heading3': 'clamp(1em, 2vw + 0.2em, 2.8em)',
+        'heading3': 'clamp(2em, 3vw + 0.2em, 3.2em)',
         'display': 'clamp(4em, 10vw + .2em, 12em)',
         'footer': 'clamp(40px, 9vw, 80px)',
       },
@@ -53,7 +54,7 @@ module.exports = {
       colors:{
         'brand-white':"#F6EFE4",
         'brand-black':"#181717",
-        'brand-accent':"#0100BE", //accent for links, hover state 
+        'brand-accent':"#c5fe0c", //accent for links, hover state 
         'brand-secondary':"#C5FE0C", //blue best
         'brand-background-dark':"#1c2218",
         'brand-background':"#D23723",
