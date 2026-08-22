@@ -765,11 +765,11 @@ export default function Packages() {
         >
 
           <div>
-            <p className="mb-1 text-sm font-medium">
+            <p className="mb-1 text-para font-custom font-medium">
               Not sure which service is right for you?
             </p>
 
-            <p className="text-sm text-white/35">
+            <p className="text-minor font-body text-brand-white/65">
               Tell us what your vehicle needs and we&apos;ll
               recommend the right package.
             </p>
@@ -780,7 +780,7 @@ export default function Packages() {
             whileHover={{
               x: 5,
             }}
-            className="flex shrink-0 items-center gap-3 text-sm font-medium text-brand-background"
+            className="flex shrink-0 items-center gap-3 text-minor font-body font-medium text-brand-background"
           >
             Talk to a detailer
 
