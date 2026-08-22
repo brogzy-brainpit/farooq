@@ -10,7 +10,7 @@ const fullDetailPackages = [
     name: "Full Maintenance",
     badge: "Refresh",
     recommended: false,
-    image: null,
+    image: "/assets/red2.webp",
     included: [
       "Interior vacuum",
       "Wipe all surfaces",
@@ -30,7 +30,7 @@ const fullDetailPackages = [
     name: "Gold Premium",
     badge: "Most Popular",
     recommended: true,
-    image: "/images/gold-premium.jpg",
+    image: "/assets/1.png",
     included: [
       "Double vacuum interior",
       "Clean & protect plastic",
@@ -53,7 +53,7 @@ const fullDetailPackages = [
     name: "Masterpiece Detail",
     badge: "V.I.P.",
     recommended: false,
-    image: "/images/masterpiece.jpg",
+    image: "/assets/inandout.jpg",
     included: [
       "Double vacuum interior",
       "Clean & protect plastic",
@@ -78,7 +78,7 @@ const interiorPackages = [
     name: "Maintenance",
     badge: "Refresh",
     recommended: false,
-    image: null,
+    image: "/assets/interior.jpg",
     included: [
       "Complete interior vacuum",
       "Wipe all surfaces",
@@ -93,7 +93,7 @@ const interiorPackages = [
     name: "Deep Shampoo",
     badge: "Most Popular",
     recommended: true,
-    image: "/images/deep-shampoo.jpg",
+    image: "/assets/deep-shampoo.jpg",
     included: [
       "Deep clean treatment",
       "Shampoo all carpets & seats",
@@ -110,7 +110,7 @@ const interiorPackages = [
     name: "Mold Reset",
     badge: "Remediation",
     recommended: false,
-    image: "/images/mold-reset.jpg",
+    image: "/assets/mold-reset.png",
     included: [
       "Mold remediation treatment",
       "Shampoo seats & carpets",
@@ -130,7 +130,7 @@ const exteriorPackages = [
     name: "Maintenance",
     badge: "Refresh",
     recommended: false,
-    image: null,
+    image: "/assets/red-benz.png",
     included: [
       "Basic 5 spot polish",
       "Professional hand wash",
@@ -145,7 +145,7 @@ const exteriorPackages = [
     name: "Wax & Buff",
     badge: "Most Popular",
     recommended: true,
-    image: "/images/wax-and-buff.jpg",
+    image: "/assets/buffing.png",
     included: [
       "Paint enhancement polish",
       "Professional hand wash",
@@ -161,7 +161,7 @@ const exteriorPackages = [
     name: "Ceramic Coating",
     badge: "V.I.P.",
     recommended: false,
-    image: "/images/ceramic-coating.jpg",
+    image: "/assets/coating.png",
     included: [
       "Our best 9H & 10H coatings",
       "Ultimate gloss",
@@ -362,7 +362,7 @@ export default function Packages() {
               duration: 0.6,
               delay: 0.2,
             }}
-            className="max-w-md text-minor leading-7 text-white/50 lg:pb-2"
+            className="max-w-md font-body text-minor leading-7 text-white/50 lg:pb-2"
           >
             Choose the level of care your vehicle deserves.
             Every service is performed with attention to
@@ -408,7 +408,7 @@ export default function Packages() {
                         category.id
                       )
                     }
-                    className="relative lg:min-w-[130px] min-w-[80px] flex-1 whitespace-nowrap rounded-full px-6 py-3.5 text-sm font-medium sm:flex-none"
+                    className="relative lg:min-w-[130px] min-w-[80px] flex-1 whitespace-nowrap rounded-full px-6 py-3.5 text-minor font-body font-mediu sm:flex-none"
                   >
                     {isActive && (
                       <motion.div
@@ -496,7 +496,7 @@ export default function Packages() {
                       {/* POPULAR GLOW */}
 
                       {pkg.recommended && (
-                        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(197,254,12,0.12),transparent_45%)]" />
+                        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgb(210,55,35),transparent_45%)]" />
                       )}
 
                       {/* CARD CONTENT */}
@@ -509,9 +509,9 @@ export default function Packages() {
 
                           {pkg.badge ? (
                             <div
-                              className={`inline-flex items-center gap-2 rounded-full px-3 py-1.5 text-minor font-semibold uppercase tracking-[0.15em] ${
+                              className={`inline-flex items-center gap-2 rounded-full px-3 py-1.5 text-minor font-body font-semibold uppercase tracking-[0.15em] ${
                                 pkg.recommended
-                                  ? "bg-brand-background text-black"
+                                  ? "bg-brand-background text-brand-white"
                                   : "bg-white/5 text-white/50"
                               }`}
                             >
@@ -533,7 +533,7 @@ export default function Packages() {
                             <div />
                           )}
 
-                          <span className="text-minor text-white/20">
+                          <span className="text-minor font-body text-white/20">
                             0{index + 1}
                           </span>
                         </div>
@@ -592,7 +592,7 @@ export default function Packages() {
                               What&apos;s included
                             </span>
 
-                            <span className="text-minor text-white/20">
+                            <span className="text-minor font-body text-white/20">
                               {pkg.included.length} services
                             </span>
 
